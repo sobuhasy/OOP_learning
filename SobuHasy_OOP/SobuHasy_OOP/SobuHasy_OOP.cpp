@@ -20,5 +20,13 @@ int main() {
 	fursuiter1.fursuitMaker = "R5Suits";
 	fursuiter1.fursuiterAge = 25;
 	fursuiter1.IntroduceYourself();
+
+	Fursuiter fursuiter2;
+	fursuiter2.fursonaName = "Yul";
+	fursuiter2.Species = "wolverine";
+	fursuiter2.fursuitMaker = "Nyaamiou";
+	fursuiter2.fursuiterAge = 22;
+	fursuiter2.IntroduceYourself();
+
 	cout << "It is a pleasure to be in the Furry Fandom and to program things!" << endl;
 }
