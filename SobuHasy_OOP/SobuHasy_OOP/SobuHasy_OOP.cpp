@@ -30,11 +30,20 @@ public:
 	void setAge(int age) {
 		fursuiterAge = age;
 	}
-	string getAge() {
-		return Species;
+	int getAge() {
+		return fursuiterAge;
 	}
 	void IntroduceYourself() {
 		cout << "Hello, my name is " << fursonaName << ", I am a " << fursuiterAge << " year old " << Species << ", and my Fursuit was made by " << fursuitMaker << "." << endl;
+	}
+
+	void NSFWVerification() {
+		if (fursuiterAge >= 18) {
+			cout << fursonaName << " is allowed to go to the NSFW spaces" << endl;
+		}
+		else {
+			cout << fursonaName <<  " is allowed to go only to the SFW spaces" << endl;
+		}
 	}
 	Fursuiter(string name, string species, string maker, int age){
 		fursonaName = name;
@@ -51,8 +60,14 @@ int main() {
 	Fursuiter fursuiter2=Fursuiter("Yul", "wolverine", "Nyaamiou", 22);
 	fursuiter2.IntroduceYourself();
 
+	Fursuiter fursuiter3 = Fursuiter("Iixmggie", "dog", "myself", 16);
+	fursuiter3.IntroduceYourself();
+
 	fursuiter1.setMaker("Ev1Makers");
 	cout << "My dream is to have my " << fursuiter1.getName() << " 2.0 from " << fursuiter1.getMaker() << "!" << endl;
+
+	fursuiter1.NSFWVerification();
+	fursuiter3.NSFWVerification();
 
 	cout << "It is a pleasure to be in the Furry Fandom and to program things!" << endl;
 }
