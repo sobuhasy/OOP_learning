@@ -1,7 +1,11 @@
 #include <iostream>
 using namespace std;
 
-class Fursuiter {
+class abstractFursuiter {
+	virtual void NSFWVerification()=0;
+};
+
+class Fursuiter:abstractFursuiter {
 private:
 	string fursonaName;
 	string Species;
@@ -37,19 +41,21 @@ public:
 		cout << "Hello, my name is " << fursonaName << ", I am a " << fursuiterAge << " year old " << Species << ", and my Fursuit was made by " << fursuitMaker << "." << endl;
 	}
 
-	void NSFWVerification() {
-		if (fursuiterAge >= 18) {
-			cout << fursonaName << " is allowed to go to the NSFW spaces" << endl;
-		}
-		else {
-			cout << fursonaName <<  " is allowed to go only to the SFW spaces" << endl;
-		}
-	}
+
 	Fursuiter(string name, string species, string maker, int age){
 		fursonaName = name;
 		Species = species;
 		fursuitMaker = maker;
 		fursuiterAge = age;
+	}
+
+	void NSFWVerification() {
+		if (fursuiterAge >= 18) {
+			cout << fursonaName << " is allowed to go to the NSFW spaces" << endl;
+		}
+		else {
+			cout << fursonaName << " is allowed to go only to the SFW spaces" << endl;
+		}
 	}
 };
 
